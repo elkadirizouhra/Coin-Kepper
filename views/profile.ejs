@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+<!-- Bootstrap CSS -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<!-- Font Awesome CSS -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+</head>
+<style>
+    body {
+    background: #67B26F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 0;
+    margin-top:5cm;
+    font-family: 'Lato', sans-serif;
+    color:  #000;}
+    .student-profile .card {
+    border-radius: 10px;
+}.student-profile .card .card-header .profile_img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 10px auto;
+    border: 10px solid #ccc;
+    border-radius: 50%;
+}.student-profile .card h3 {
+    font-size: 20px;
+    font-weight: 700;
+}.student-profile .card p {
+    font-size: 16px;
+    color: #000;
+}
+.student-profile .table th,
+.student-profile .table td {
+    font-size: 14px;
+    padding: 5px 10px;
+    color: #000;
+}
+.button{
+margin-left: 5cm ;
+}
+                       
+
+
+
+   
+</style>
+<body>
+    
+    <div class="student-profile py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card shadow-sm">
+                <div class="card-header bg-transparent text-center">
+                  <img class="profile_img" src="data:image/png;base64,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" alt="student dp">
+                  <h3><%= user %></h3>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card shadow-sm">
+                <div class="card-header bg-transparent border-0">
+                    <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th width="30%">Name</th>
+                            <td width="2%">:</td>
+                            <td><%= profile.name %></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">Email</th>
+                            <td width="2%">:</td>
+                            <td><%= profile.email %></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">Password</th>
+                            <td width="2%">:</td>
+                            <td><%= profile.password %></td>
+                        </tr>
+                        
+                    </table>
+                    
+                    <button class="btn btn-primary">
+                        <i class="fas fa-edit"></i> Modifier
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

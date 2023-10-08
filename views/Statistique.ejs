@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Category Progress Bars</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
+<script>
+  window.onload = function () {
+  var max = -180;
+  var max2 = -220;
+  var progressBars = document.querySelectorAll('.progress');
+  var progressBars2 = document.querySelectorAll('.progress2');
+  
+  progressBars.forEach(function (value) {
+    var percent = value.getAttribute('data-progress');
+    var fill = value.querySelector('.fill');
+    var valueText = value.querySelector('.value');
+    fill.setAttribute('style', 'stroke-dashoffset: ' + ((100 - percent) / 100) * max);
+    valueText.innerHTML = percent + '%';
+  });
+  progressBars2.forEach(function (value) {
+    var percent = value.getAttribute('data-progress');
+    var fill = value.querySelector('.fill2');
+    var valueText = value.querySelector('.value2');
+    fill.setAttribute('style', 'stroke-dashoffset: ' + ((100 - percent) / 100) * max2);
+    valueText.innerHTML = percent + '%';
+  });
+  }
+ 
+ 
+
+  
+</script>
+
+  
+</head>
+
+ 
+<style media="screen">
+  @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,300);
+/* Apply css properties to h1 element */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+      font-family: 'Your Custom Font', Arial, sans-serif;
+    }
+    
+
+
+    * {
+      padding: 0;
+      margin: 0;
+      font-weight: 800;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+    .wrapper-center {
+  display: flex;
+  align-items: flex-start; /* Aligner en haut pour que les éléments commencent au même niveau */
+  justify-content: space-between; /* Espace entre les éléments */
+  height: 100vh;
+}
+
+.category-progress {
+  display: flex;
+  flex-direction: column; /* Afficher les éléments en colonne (l'un en dessous de l'autre) */
+  flex: 1; /* Les barres de progression prennent autant d'espace que possible */
+  padding: 20px; /* Ajoutez de l'espace entre les barres de progression si nécessaire */
+  margin-top: 70px;
+}
+
+.category-progress{
+  flex: 1; /* Les deux parties prennent autant d'espace que possible */
+  padding: 20px; /* Ajoutez de l'espace entre les deux parties si nécessaire */
+}
+
+    .progress-bar {
+      background: white;
+      width: 20rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      position: relative;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .progress-bar:before {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: white;
+      z-index: 0;
+    }
+
+    .progress {
+      width: 18rem;
+      height: 2.8rem;
+      z-index: 1;
+    }
+
+    .progress .track,
+    .progress .fill {
+      fill: rgba(0, 0, 0, 0);
+      stroke-width: 10;
+    }
+
+    .progress .track {
+      stroke: #20313e;
+    }
+
+    .fill {
+      stroke: #00ff00;
+      stroke-dasharray: 219.99078369140625;
+      stroke-dashoffset: -219.99078369140625;
+      transition: stroke-dashoffset 1s;
+    }
+
+    .value {
+      fill: #fbfbfb;
+      text-anchor: middle;
+      font-size: xx-small;
+    }
+
+    .text {
+      font-size: 12px;
+      fill: #100202;
+     
+    }
+    ul {
+      list-style: none;}
+      ul li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+    ul {
+      list-style: none;}
+      ul li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+    header {
+  background-color: green;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 15px; /* Augmentation du rayon de la bordure pour un aspect plus arrondi */
+border: 2px solid #000; 
+margin-left: 5.4cm;
+}
+nav ul {
+  list-style: none;
+}
+
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+main {
+  max-width: 1200px;
+  
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 7cm;
+  margin-top: 1cm;
+}
+
+ /* cercle */
+ 
+ .progress-cercle {
+     
+      width: 200px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px; 
+      position: relative;
+      margin-right: 3cm;
+     
+  }
+  .progress-cercle:before {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 50%;
+      height: 100%;
+     
+      z-index: 0;
+  }
+ 
+  .progress2{
+      width: 200px;
+      height: 280px;
+      z-index: 1;
+  }
+  .progress2 .track2, .progress2 .fill2{
+      fill: rgba(208, 194, 194, 0);
+      stroke-width: 3;
+      transform: rotate(90deg)translate(0px, -80px);
+  }
+  .progress2 .track2{
+      stroke: #20313e;
+  }
+  .progress2 .fill2 {
+      stroke: #008eff;
+      stroke-dasharray: 219.99078369140625;
+      stroke-dashoffset: -219.99078369140625;
+      transition: stroke-dashoffset 1s;
+  }
+  .progress2 .value2 {
+      fill: #008eff;
+      text-anchor: middle;
+  }
+  .progress2 .text2 {
+      font-size: 12px;
+      fill: #0e0b0b;
+      text-anchor: middle;
+  }
+ 
+ 
+  </style>
+
+
+</head>
+<body>
+  <!-- Votre contenu HTML ici -->
+</body>
+<%- include('./sideBar') %>
+ 
+  <header>
+    <h1>STATISTIQUE </h1>
+   
+  </header>
+      <main>
+        <div class="wrapper-center">
+          <!-- Barres de progression de catégorie affichées l'une en dessous de l'autre -->
+          <div class="category-progress">
+            <% const categories = {}; %>
+            <% for (let i = 0; i < depenses.length; i++) { %>
+              <% const category = depenses[i].category; %>
+              <% if (!categories[category]) { categories[category] = 0; } %>
+              <% categories[category] += ((depenses[i].amount * 100) / totalRevenue); %>
+            <% } %>
+    
+            <% for (const category in categories) { %>
+              <div class="progress-bar">
+                <svg class="progress" data-progress="<%= categories[category].toFixed(2) %>" x="0px" y="0px" viewBox="0 0 200 30">
+                  <path class="track" d="M10,15 L190,15" />
+                  <path class="fill" d="M10,15 L190,15" />
+                  <text class="value" x="50%" y="20"><%= category %></text>
+                  <text class="text" x="5%" y="30%"><%= category %></text>
+                </svg>
+              </div>
+            <% } %>
+          </div>
+          <div class="progress-cercle">
+            <svg class="progress2" data-progress="<%= totalPercentage %>" x="0px" y="0px" viewBox="0 0 80 80">
+              <path class="track2" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+              <path class="fill2" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+              <text class="value2" x="50%" y="55%"><%= totalPercentage %>%</text>
+              <text class="text2" x="50%" y="115%">Total</text>
+            </svg>
+          </div>
+        </div>
+      
+          
+          
+          
+  </main>
+</body>
+</html>
+
+

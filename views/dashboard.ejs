@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dashboard</title>
+    <style>
+      /* Réinitialisation de la marge et du rembourrage */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles de base */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: green;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 15px; /* Augmentation du rayon de la bordure pour un aspect plus arrondi */
+border: 2px solid #000; 
+margin-left: 5.4cm;
+height: 2cm;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+main {
+  max-width: 1200px;
+  
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 7cm;
+  margin-top: 1cm;
+}
+
+.balance {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.balance-amount {
+  font-size: 24px;
+  color: #007bff;
+}
+
+.transactions {
+  padding: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.transactions h2 {
+  margin-bottom: 10px;
+}
+
+.transaction-date {
+  display: inline-block;
+  width: 100px;
+  font-weight: bold;
+}
+
+.transaction-description {
+  display: inline-block;
+  width: 60%;
+}ul {
+      list-style: none;}
+      ul li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+.transaction-amount {
+  display: inline-block;
+  width: 20%;
+  text-align: right;
+  color: #007bff;
+}
+
+    </style>
+  </head>
+  <body>
+
+    <%- include('./sideBar') %>
+ 
+  <header>
+    <h1>Mon Compte</h1>
+   
+  </header>
+  
+  <main>
+    <section class="balance">
+      <h2>Solde actuel</h2>
+      <p class="balance-amount">$<%= balance %></p>
+    </section>
+    
+    <section class="transactions">
+      <h2>Dernières transactions</h2>
+      <ul>
+        <% transactions.forEach(transaction => { %>
+          <li>
+            <span class="transaction-date"><%= transaction.date.toISOString().split('T')[0] %></span>
+            <span class="transaction-description"><%= transaction.description %></span>
+            <span class="transaction-amount">
+              <% if (transaction.type === 'revenue') { %>
+                + <%= transaction.amount %> $
+              <% } else if (transaction.type === 'depense') { %>
+                - <%= transaction.amount %> $
+              <% } %>
+            </span>
+          </li>
+        <% }); %>
+      </ul>
+    </section>
+    
+    
+    
+    
+    
+    
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Gestion de Budget</p>
+  </footer>
+</body>
+</html>
+
+    
+
+    <h4></h4>
+  </body>
+</html>

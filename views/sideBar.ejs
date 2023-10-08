@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sideBar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+    <!-- Ajoutez ce lien dans la section <head> de votre fichier HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    
+   
+    <style>
+        body{
+            font-family: 'Poppins' ;
+        }
+        h1, h5{
+            font-family: 'Poppins' ;
+        }.liste{
+            margin-top: 100px;
+        }
+        /* Ajoutez ce code à votre section <style> ou à votre fichier CSS externe */
+.logout-button {
+  display: flex;
+ 
+  align-items: center;
+  margin-bottom:100px;
+}
+
+.logout-button a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #d9292f;
+}
+
+.logout-button a i {
+  margin-right: 0.5rem;
+}
+
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          margin-bottom: 100px;
+        }
+        .sideBar{
+            position: fixed;
+            background: green;
+            width: 200px;
+            padding: 20px;
+            left: 0;
+            top: 0;
+            bottom: 0;
+        }
+        .bienvenu{
+            margin-bottom: 10px;
+            color: aqua;
+            font-size: 12px;
+        }
+        .item2 {
+            margin-bottom: 10px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .item2:hover {
+            color: #fff;
+            background-color: #537299;
+        }
+        .hello, .avancement{
+            width: calc(100% - 200px);
+            padding: 20px;
+            margin-left: 250px;
+        }
+        .avancement{
+            margin-top: 100px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="sideBar">
+        <h5 class="bienvenu">Bienvenue</h5>
+        <style>
+            /* Style pour l'image ronde */
+            .profile-image {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          
+            /* Style pour le conteneur du profil */
+            .profile-container {
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+              position: relative;
+            }
+          
+            /* Style pour la flèche */
+            .arrow {
+              margin-left: 5px;
+              width: 0;
+              height: 0;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-top: 5px solid black;
+              transition: transform 0.3s ease;
+            }
+          
+            /* Style pour la flèche lorsque cliquée */
+            .arrow.active {
+              transform: rotate(180deg);
+            }
+          
+            /* Style pour la liste d'options */
+            .options-list {
+              display: none;
+              position: absolute;
+              background-color: #fff;
+              border: 1px solid #ccc;
+              padding: 10px;
+              z-index: 1;
+              top: calc(100% + 5px);
+              left: 0;
+              width: 100%;
+            }
+          
+            /* Style pour les options de la liste */
+            .options-list li {
+              margin-bottom: 5px;
+            }
+            /* Ajoutez ce style pour décaler le span */
+.profile-container span.user-name {
+    margin-left: 10px;
+}
+
+          </style>
+          
+          <!-- HTML pour le profil -->
+          <div class="profile-container">
+            <img class="profile-image" src="data:image/png;base64,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" alt="Profil">
+            <span class="user-name"><%= user %></span>
+            <span class="arrow"></span>
+            <ul class="options-list">
+              <li>
+                <div class="profile">
+            
+                <a href="/users/profile">
+                  <i class="fas fa-user"></i> Profile
+                </a>
+                      
+              </div>
+              </li>
+              <li>
+                <div class="para">
+                <i class="fas fa-cog"></i> Paramètres
+                </div>
+              </li>
+
+              <li>
+                <div class="logout-button">
+                  <a href="/users/logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                  </a>
+                </div>
+              </li>
+            </ul>
+            
+          </div>
+          
+          <script>
+            // Code JavaScript pour afficher/cacher la liste d'options et tourner la flèche
+            const profileContainer = document.querySelector('.profile-container');
+            const arrow = document.querySelector('.arrow');
+            const optionsList = document.querySelector('.options-list');
+          
+            profileContainer.addEventListener('click', () => {
+              arrow.classList.toggle('active');
+              optionsList.style.display = optionsList.style.display === 'none' ? 'block' : 'none';
+            });
+          </script>
+         <div class="liste">
+
+          <nav>
+            <ul>
+              <li><a href="/users/dashboard">Accueil</a></li>
+              <li><a href="/users/depense">Dépenses</a></li>
+              <li><a href="/users/revenue">Revenus</a></li>
+              <li><a href="/users/statistique">Statistique</a></li>
+             
+           </ul>
+           </nav>
+      
+         </div> 
+       
+       
+       
+       
+      
+    </div>
+   
+ 
+
+    
+</body>
+</html>

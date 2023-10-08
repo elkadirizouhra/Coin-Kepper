@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Your+Custom+Font&display=swap" rel="stylesheet">
+ 
+  <title>Dépenses - Gestion de Budget</title>
+  <style>
+    /* Réinitialisation de la marge et du rembourrage */
+* /* Réinitialisation de la marge et du rembourrage */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    body {
+      font-family: 'Your Custom Font', Arial, sans-serif;
+    }
+
+    ul {
+      list-style: none;}
+      ul li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    ul li:last-child {
+      border-bottom: none;
+    }
+
+    .description {
+      font-weight: bold;
+    }
+
+    .montant {
+      color: #e74c3c;
+    }
+
+/* Styles de base */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+}
+.expense-list .add-button {
+  background-color: #007bff; /* Couleur bleue */
+  color: #fff;
+}
+
+.expense-list .edit-button {
+  background-color: #007bff; /* Couleur bleue */
+  color: #fff;
+}
+
+.expense-list .delete-button {
+  background-color: #e74c3c; /* Couleur rouge */
+  color: #fff;
+}
+
+.expense-list .add-button:hover,
+.expense-list .edit-button:hover,
+.expense-list .delete-button:hover {
+  background-color: #0056b3; /* Couleur bleue plus sombre */
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+main {
+  max-width: 1200px;
+  
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 7cm;
+  margin-top: 1cm;
+}
+
+.transaction-form {
+  text-align: center; /* Centrer le formulaire d'ajout de transaction */
+}
+
+.transaction-form form {
+  display: inline-block; /* Mettre le formulaire en ligne */
+}
+
+.income-list,
+.expense-list {
+  text-align: center; /* Centrer la liste des transactions */
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+  </style>
+   <script>
+    // Code JavaScript pour gérer la soumission du formulaire
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch('/add_depense', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await response.json();
+      alert(data.message);
+      form.reset(); // Réinitialiser le formulaire après l'insertion réussie
+    });
+  </script>
+ 
+</head>
+<body>
+  <%- include('./sideBar') %>
+  <header>
+    <h1>Dépenses</h1>
+   
+      </header>
+     
+  <main>
+    <section class="transaction-form">
+      <h2>modifier votre  dépense</h2>
+      <form action="/users/updatedepense" method="POST">
+        <input type="hidden" id="ID" name="ID">
+        <label for="Description">Description :</label>
+        <input type="text" id="Description" name="Description"  required>
+        
+        <label for="montant">Montant :</label>
+        <input type="number" id="montant" name="montant" step="0.01" required>
+       
+        <label for="date">Date :</label>
+        <input type="date" id="date" name="date" required>
+        
+        <button type="submit">Ajouter</button>
+      </form>
+    </section>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Gestion de Budget</p>
+  </footer>
+</body>
+</html>
