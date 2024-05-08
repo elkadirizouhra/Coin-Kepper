@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button {
+  background-color: #cc9072;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  font-size: large;
+  border-radius: 5rem;
+  cursor: pointer;
+  position: absolute;
+  right: 85px;
+  top: 135px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2c2724;
+}
+
+body {
+  font-family: "Your Custom Font", Arial, sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+.description {
+  font-weight: bold;
+}
+
+.montant {
+  display: inline-block;
+  width: 100px; /* Largeur fixe pour aligner les montants */
+  text-align: right;
+  color: #007bff;
+}
+
+/* Styles de base */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3eae5;
+}
+
+header {
+  background-color: green;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 15px; /* Augmentation du rayon de la bordure pour un aspect plus arrondi */
+  border: 2px solid #000;
+  margin-left: 5.4cm;
+}
+
+nav ul {
+  list-style: none;
+  display: inline-block;
+  width: 100px; /* Largeur fixe pour aligner les montants */
+}
+
+.expense-list .add-button {
+  background-color: #007bff; /* Couleur bleue */
+  color: #fff;
+}
+
+.expense-list .edit-button {
+  background-color: #007bff; /* Couleur bleue */
+  color: #fff;
+}
+
+.expense-list .delete-button {
+  background-color: #e74c3c; /* Couleur rouge */
+  color: #fff;
+}
+
+.expense-list .add-button:hover,
+.expense-list .edit-button:hover,
+.expense-list .delete-button:hover {
+  background-color: #0056b3; /* Couleur bleue plus sombre */
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+main {
+  padding: 20px;
+  margin-left: 20px;
+  background-color: #f3eae5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 2cm;
+}
+
+.transaction-form {
+  text-align: center; /* Centrer le formulaire d'ajout de transaction */
+}
+
+.transaction-form form {
+  display: flex; /* Mettre le formulaire en ligne */
+  gap: 25px;
+
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.income-list,
+.expense-list {
+  text-align: center; /* Centrer la liste des transactions */
+}
+/* form starting stylings ------------------------------- */
+.group {
+  position: relative;
+  margin-bottom: 45px;
+}
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 200px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+input:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264ae;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: 200px;
+}
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264ae;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+::-webkit-input-placeholder {
+  color: red !important
+  ;
+}
+input[type="date"]::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.box {
+}
+
+.box select {
+  background-color: transparent;
+  color: black;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}

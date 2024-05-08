@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/dashboard.css" type="text/css" />
+  </head>
+  <body>
+    <section class="dashboard">
+      <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Date</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0.4">
+          <tbody>
+            <% if (type === 'depenses') { %> <% data.forEach((depense) => { %>
+            <tr>
+              <td><%= depense.description %></td>
+              <td><%= depense.category %></td>
+              <td><%= depense.amount %></td>
+              <td><%= depense.date %></td>
+            </tr>
+            <% }); %> <% } else if (type === 'revenue') { %> <%
+            data.forEach((revenue) => { %>
+            <tr>
+              <td><%= revenue.description %></td>
+              <td><%= revenue.category %></td>
+              <td><%= revenue.amount %></td>
+              <td><%= revenue.date %></td>
+            </tr>
+            <% }); %> <% } else if (type === 'dashboard') { %> <%
+            data.forEach((transaction) => { %>
+            <tr>
+              <td><%= transaction.description %></td>
+              <td><%= transaction.category %></td>
+              <td><%= transaction.amount %></td>
+              <td><%= transaction.date %></td>
+            </tr>
+            <% }); %> <% } %>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </body>
+</html>
