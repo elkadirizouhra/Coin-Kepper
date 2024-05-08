@@ -193,12 +193,11 @@ body.dark .switch:before {
 }
 
 .dashboard {
-  position: relative;
-  left: 200px;
   background-color: #f3eae5;
   min-height: 100vh;
   width: calc(100% - 250px);
-  padding: 10px 14px;
+  margin: 0 auto;
+  padding: 0px 14px;
   transition: var(--tran-05);
 }
 nav.close ~ .dashboard {
@@ -261,7 +260,7 @@ nav.close ~ .dashboard .top {
   border-radius: 50%;
 }
 .dashboard .dash-content {
-  padding-top: 50px;
+  padding-top: 20px;
 }
 .dash-content .title {
   display: flex;

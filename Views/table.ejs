@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="/styles/dashboard.css" type="text/css" />
   </head>
   <body>
-    <section class="dashboard">
+    <section class="dashboard1">
       <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
           <thead>
             <tr>
               <th>Name</th>
               <th>Type</th>
-              <th>Date</th>
               <th>Amount</th>
+              <th>Date</th>
             </tr>
           </thead>
         </table>
@@ -42,7 +42,7 @@
             data.forEach((transaction) => { %>
             <tr>
               <td><%= transaction.description %></td>
-              <td><%= transaction.category %></td>
+              <td><%= transaction.type %></td>
               <td><%= transaction.amount %></td>
               <td><%= transaction.date %></td>
             </tr>

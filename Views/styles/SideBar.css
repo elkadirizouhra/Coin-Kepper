@@ -104,3 +104,10 @@ nav.open ~ .overlay {
   left: 260px;
   pointer-events: auto;
 }
+.profile {
+  position: absolute;
+  right: 10px;
+}
+.icon {
+  font-size: 50px;
+}
