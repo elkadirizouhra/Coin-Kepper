@@ -7,6 +7,8 @@ Enregistrement des revenus : Enregistrez vos sources de revenus avec une descrip
 Suivi des transactions : Visualisez vos dernières transactions pour garder une trace de vos activités financières.
 Calcul des totaux : Coin-Keeper calcule automatiquement vos revenus totaux, vos dépenses totales et votre solde actuel.
 Interface utilisateur conviviale : Une interface utilisateur intuitive rend la gestion de vos finances simple et efficace.
+
+
 ----------------Installation
 Clonez le dépôt GitHub :
 1.git clone https://github.com/votre-utilisateur/coin-keeper.git
